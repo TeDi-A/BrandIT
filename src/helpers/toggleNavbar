@@ -1,0 +1,35 @@
+export const openNavbar = () => {
+  let navLinks = document.querySelector(".nav-links");
+  navLinks.style.height = "calc(100vh - 4rem)";
+  navLinks.style.zIndex = "1000";
+  // document.body.classList.add("no-scroll");
+};
+
+export const closeNavbar = () => {
+  let navLinks = document.querySelector(".nav-links");
+  navLinks.style.height = "0";
+  navLinks.style.zIndex = "-99";
+
+};
+
+const toggleDropdown = (navLinksClass, dropdownSelector) => {
+  let navLinks = document.querySelector(".nav-links");
+  const dropdownContent = document.querySelector(dropdownSelector);
+
+  if (navLinks.classList.contains(navLinksClass)) {
+    dropdownContent.style.height = "0";
+    navLinks.classList.toggle(navLinksClass);
+  } else {
+    navLinks.classList.toggle(navLinksClass);
+    dropdownContent.style.height = dropdownContent.scrollHeight + "px";
+  }
+};
+
+export const viewMore1 = () => {
+  console.log("Clicked");
+  toggleDropdown("show1", ".dropdown1-sub-menu");
+};
+
+export const viewMore2 = () => {
+  toggleDropdown("show3", ".dropdown2-sub-menu");
+};

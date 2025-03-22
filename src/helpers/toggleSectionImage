@@ -1,0 +1,46 @@
+export const toggleSectionImageLg = () => {
+  const featureBox = document.querySelectorAll(".feature-text");
+  const featureLgImages = document.querySelectorAll(".feature-img-lg");
+
+  featureBox.forEach((box, index) => {
+    const boxTop = box.getBoundingClientRect().top / 2;
+    const boxBottom = box.getBoundingClientRect().bottom / 2;
+    const windowHeight = window.innerHeight / 2.25;
+
+    if (boxTop < windowHeight && boxBottom > windowHeight) {
+      featureLgImages[index].classList.add("show");
+      featureLgImages[index].classList.remove("hide");
+    } else {
+      featureLgImages[index].classList.add("hide");
+      featureLgImages[index].classList.remove("show");
+      if (index !== 4) {
+        featureLgImages[index].classList.add("hide");
+        featureLgImages[index].classList.remove("show");
+      }
+    }
+  });
+};
+
+export const toggleSectionImageMobile = () => {
+  let observer;
+  const callback = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+        observer.unobserve(entry.target);
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  };
+
+  const options = {
+    root: null,
+    threshold: 0.3,
+  };
+
+  observer = new IntersectionObserver(callback, options);
+  document.querySelectorAll(".feature-img-mobile").forEach((target) => {
+    observer.observe(target);
+  });
+};

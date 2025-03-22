@@ -1,0 +1,86 @@
+.section-3 {
+  background: linear-gradient(
+    145deg,
+    var(--primary-color) 25%,
+    var(--secondary-color) 100%
+  );
+}
+
+.section-3-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.section-3-header {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.section-3-description {
+}
+
+.pricing-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.pricing-plan {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.93);
+  align-items: center;
+  gap: 1.5rem;
+  padding: 3rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  height: 500px;
+}
+
+.pricing-plan:hover {
+  transition: transform 0.4s ease;
+  transform: scale(1.05);
+}
+
+.pricing-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  color: black;
+}
+.pricing-plan-desc,
+.pricing-details {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  text-align: center;
+}
+
+.pricing-details li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25rem;
+}
+
+.pricing-details .list-check {
+    color: rgba(0, 0, 0, 0.7);
+  margin-right: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .pricing-container {
+    flex-wrap: wrap;
+  }
+  .pricing-plan {
+    flex-grow: 1;
+  }
+}
