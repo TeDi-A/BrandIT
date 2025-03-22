@@ -23,9 +23,8 @@
 }
 
 .pricing-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
   padding: 2rem;
 }
@@ -78,9 +77,10 @@
 
 @media (max-width: 900px) {
   .pricing-container {
-    flex-wrap: wrap;
+    grid-template-columns: repeat(2, 1fr);
   }
-  .pricing-plan {
-    flex-grow: 1;
+
+  .pricing-plan:nth-child(3) {
+    grid-column: span 2;
   }
 }

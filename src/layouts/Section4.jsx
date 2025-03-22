@@ -27,7 +27,7 @@ const ContactSection = ({ contactHeader, contactSubText, buttonContent }) => {
                 placeholder="Enter your message"
               />
             </div>
-            <input type="submit" className="submit-btn" value={buttonContent} />
+            <input type="submit" className="submit-btn pry-btn" value={buttonContent} />
           </form>
         </div>
       </div>
@@ -56,7 +56,7 @@ const SubscribeSection = ({
               <input id="Email" type="email" placeholder="Enter your email" />
             </div>
 
-            <input type="submit"  className="submit-btn"  value={buttonContent} />
+            <input type="submit"  className="submit-btn sec-btn"  value={buttonContent} />
           </form>
         </div>
       </div>
