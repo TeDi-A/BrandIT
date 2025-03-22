@@ -84,3 +84,13 @@
     grid-column: span 2;
   }
 }
+@media (max-width: 500px) {
+  .pricing-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .pricing-plan:nth-child(3) {
+    grid-column: span 1;
+  }
+
+}
